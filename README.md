@@ -116,8 +116,8 @@ The files _Differentiation_UMAP_plotting.R_ and _Differentiation Z score heatmap
    * _Expected runtime:_
      * Approximately 10 minutes
 
-
-#### 4) Instructions for use and reproduction
+---
+### 4) Instructions for use and reproduction
    
 * **classification_results_umap_together_Day1Efficiency.csv**
   1) Open the file _Differentiation Classification_Compiled_Clean.ipynb_ inside a jupyter environment and edit the variable "full_data" in cells 1 and 2  to adjust the default path to correspond with file location. Subsequently run each source code cell to run all processing steps in sequence and generate ROC curves and feature weight graphs for Figures 3 & S5. No other adjustments to the code should be needed.  
