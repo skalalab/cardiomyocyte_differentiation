@@ -108,7 +108,8 @@ The files _Differentiation_UMAP_plotting.R_ and _Differentiation Z score heatmap
   * _Expected runtime:_
     * Approximately 10 minutes
 
-* &nbsp;
+  &nbsp;
+  
 * **Differentiation Z score heatmaps.R** 
   * _Instructions:_ 
     * Run the code which will initialize dependencies, read in required data files, and generate heatmap plots.
@@ -121,14 +122,16 @@ The files _Differentiation_UMAP_plotting.R_ and _Differentiation Z score heatmap
 ### 4) Instructions for use and reproduction
    
 * **classification_results_umap_together_Day1Efficiency.csv**
-  1) Open the file _Differentiation Classification_Compiled_Clean.ipynb_ inside a jupyter environment and edit the variable "full_data" in cells 1 and 2  to adjust the default path to correspond with file location. Subsequently run each source code cell to run all processing steps in sequence and generate ROC curves and feature weight graphs for Figures 3 & S5. No other adjustments to the code should be needed.  
+  1) Open the file _Differentiation Classification_Compiled_Clean.ipynb_ inside a jupyter environment. Subsequently run each source code cell to run all processing steps in sequence and generate ROC curves and feature weight graphs for Figures 3 & S5. No other adjustments to the code should be needed.  
 * **classification_results_umap_together_Day1Efficiency.csv** & **classification_results_umap_AllData.csv** 
-  1) Open the file _UMAP_Mapping_Compiled_Clean.ipynb_ inside a jupyter environment and edit "full_data" variable to adjust the default path to correspond with the file location. 
-     * _classification_results_umap_together_AllData.csv_ should be run for Days 0-5 UMAPs (Figure 2).
-     * _classification_results_umap_together_Day1Efficiency.csv_ should be run for Day 1 low vs high effiency UMAP (Figure 3). Comment out any corresponding "full data" & "df.to_csv" lines not specific to the dataset of interest. Run source code to perform all processing steps in sequence and save CSV file with UMAP coordinates. No other adjustments to the code should be needed.  
-* Set R/RStudio directory to path location of the two CSV files above to run “Differentiation_UMAP_plotting.R”. Run all source code to perform all processing steps in sequence and generate UMAPs for Figures 2, 3, & S3 and save .eps files for each UMAP plot. No other adjustments to the code should be needed.  
+  1) Open the file _UMAP_Mapping_Compiled_Clean.ipynb_ inside a jupyter environment. 
+     * _classification_results_umap_together_AllData.csv_ is read in to produce Days 0-5 UMAPs (Figure 2).
+     * _classification_results_umap_together_Day1Efficiency.csv_ is read in to produce Day 1 low vs high effiency UMAP (Figure 3). 
+     *Run source code to perform all processing steps in sequence and save CSV file with UMAP coordinates. No other adjustments to the code should be needed.    
+  2) Open the file _Differentiation_UMAP_plotting.R_ in RStudio
+     *Run all source code in “Differentiation_UMAP_plotting.R” to perform all processing steps in sequence and generate UMAP plots for Figures 2, 3, & S3 and save .eps files for each UMAP plot. No other adjustments to the code should be needed.  
 * **Differentiation_ZscoreData.csv Differentiation_ZscoreData_day1.csv, & Differentiation_ZscoreData_day0.csv**
-  * Set R/RStudio directory to path location of these three CSV files above to run “Differentiation Z score heatmaps.R”. Run source code to perform all processing steps in sequence to generate heatmaps for Figures 2 & S4. No other adjustments to the code should be needed. 
+  * Run all source code in “Differentiation Z score heatmaps.R” to perform all processing steps in sequence to generate heatmaps for Figures 2 & S4. No other adjustments to the code should be needed. 
 
 **All code run according to the instructions provided above should accurately reproduce the results reported in the accompanying study. Source code also includes detailed comments for functionality of individual lines/sections.**
 
