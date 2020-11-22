@@ -127,7 +127,7 @@ The files _Differentiation_UMAP_plotting.R_ and _Differentiation Z score heatmap
   1) Open the file _UMAP_Mapping_Compiled_Clean.ipynb_ inside a jupyter environment. 
      * _classification_results_umap_together_AllData.csv_ is read in to produce Days 0-5 UMAPs (Figure 2).
      * _classification_results_umap_together_Day1Efficiency.csv_ is read in to produce Day 1 low vs high effiency UMAP (Figure 3). 
-     *Run source code to perform all processing steps in sequence and save CSV file with UMAP coordinates. No other adjustments to the code should be needed.    
+  * Run source code to perform all processing steps in sequence and save CSV file with UMAP coordinates. No other adjustments to the code should be needed.    
   2) Open the file _Differentiation_UMAP_plotting.R_ in RStudio
      *Run all source code in “Differentiation_UMAP_plotting.R” to perform all processing steps in sequence and generate UMAP plots for Figures 2, 3, & S3 and save .eps files for each UMAP plot. No other adjustments to the code should be needed.  
 * **Differentiation_ZscoreData.csv Differentiation_ZscoreData_day1.csv, & Differentiation_ZscoreData_day0.csv**
