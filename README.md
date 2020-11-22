@@ -58,7 +58,7 @@ Differentiation_ZscoreData_day0.csv | Collected/compiled by T.Q. | Yes
 * inlmisc(0.4.9)
 
 #### Hardware
-All code was last run on a laptop with a 4-core Intel-based processor (6th gen Intel i7-6500U) Windows 10 Home, 12 GB of RAM, and <1GB of storage  
+All code was last run on a laptop with a 4-core Intel-based processor (6th gen Intel i7-6500U) with Windows 10 Home, 12 GB of RAM, and >1GB of storage  
 
 No non-standard hardware required
 
