@@ -33,6 +33,7 @@ Differentiation_ZscoreData_day0.csv | Collected/compiled by T.Q. | Yes
     * umap (0.3.10)
     * sklearn (0.20.3)
     * matplotlib (3.0.3)
+    * pathlib (1.0.1)
 
 #### R
 * R 3.6.2
