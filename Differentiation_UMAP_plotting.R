@@ -18,8 +18,8 @@ library(inlmisc)
 
 
 ## Read in data sets with UMAP coordinates
-DataUMAPS_alldata<-data.frame(read.csv('classification_results_umap_AllData.csv')) # All Day 0 - Day 5 data
-DataUMAPS_Day1Eff<-data.frame(read.csv('classification_results_umap_together_Day1Efficiency.csv'))
+DataUMAPS_alldata<-data.frame(read.csv("~/classification_results_umap_AllData.csv")) # All Day 0 - Day 5 data
+DataUMAPS_Day1Eff<-data.frame(read.csv("~/classification_results_umap_together_Day1Efficiency.csv"))
 
 palette_Perc <- c('#e6194b','#4363d8', '#f58231', '#911eb4', '#46f0f0', '#f032e6', '#bcf60c', '#fabebe', '#008080', '#004530', '#3cb44b') #color palette for coding by differentiation percentage
 
