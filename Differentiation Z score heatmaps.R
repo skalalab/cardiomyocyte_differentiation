@@ -1,7 +1,7 @@
 # point working directory to extracted zip directory
+# NOTE: On Windows be sure to use forward slashes on the directory path (macOS and Linux already use forward slashes)
 PATH_TO_EXTRACTED_ZIP = "C:/Users/Nabiki/Desktop/development/cardiomyocyte_differentiation"
 setwd(PATH_TO_EXTRACTED_ZIP)
-getwd()
 
 # install dependencies
 install.packages("ggplot2")
