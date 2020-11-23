@@ -1,3 +1,18 @@
+# point working directory to extracted zip directory
+PATH_TO_EXTRACTED_ZIP = "C:/Users/Nabiki/Desktop/development/cardiomyocyte_differentiation"
+setwd(PATH_TO_EXTRACTED_ZIP)
+getwd()
+
+# install dependencies
+install.packages("ggplot2")
+install.packages("ggdendro")
+install.packages("reshape2")
+install.packages("grid")
+install.packages("gplots")
+install.packages("RColorBrewer")
+install.packages("scales")
+install.packages("spatstat")
+
 # Load dependencies
 library("ggplot2")
 library("ggdendro")
@@ -9,16 +24,16 @@ library("scales")
 library("spatstat")
 
 # Read in data
-alldata_day0 <- read.csv(file = "~/Differentiation_ZscoreData_day0.csv", header = TRUE)
+alldata_day0 <- read.csv(file = "Differentiation_ZscoreData_day0.csv", header = TRUE)
 Zcols_day0<-c("CONDITION", "FAD.Intensity","FAD.a1","FAD.a2","FAD.t1","FAD.t2","FAD.tm", "NADPH.Intensity", "NADPH.a1","NADPH.a2","NADPH.t1","NADPH.t2","NADPH.tm","Redox.Ratio")
 Zscores_day0<-alldata_day0[Zcols_day0]
 
-alldata_day1 <- read.csv(file = "~/Differentiation_ZscoreData_day1.csv", header = TRUE)
+alldata_day1 <- read.csv(file = "Differentiation_ZscoreData_day1.csv", header = TRUE)
 Zcols_day1<-c("CONDITION", "FAD.Intensity","FAD.a1","FAD.a2","FAD.t1","FAD.t2","FAD.tm", "NADPH.Intensity", "NADPH.a1","NADPH.a2","NADPH.t1","NADPH.t2","NADPH.tm","Redox.Ratio")
 Zscores_day1<-alldata_day1[Zcols_day1]
 
 
-alldata <- read.csv(file = "~/Differentiation_ZscoreData.csv", header = TRUE)
+alldata <- read.csv(file = "Differentiation_ZscoreData.csv", header = TRUE)
 Zcols<-c("CONDITION", "FAD.Intensity","FAD.a1","FAD.a2","FAD.t1","FAD.t2","FAD.tm", "NADPH.Intensity", "NADPH.a1","NADPH.a2","NADPH.t1","NADPH.t2","NADPH.tm","Redox.Ratio")
 Zscores<-alldata[Zcols]
 

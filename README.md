@@ -132,6 +132,9 @@ The files _Differentiation_UMAP_plotting.R_ and _Differentiation Z score heatmap
   2) Open the file _Differentiation_UMAP_plotting.R_ in RStudio
      *Run all source code in “Differentiation_UMAP_plotting.R” to perform all processing steps in sequence and generate UMAP plots for Figures 2, 3, & S3 and save .eps files for each UMAP plot. No other adjustments to the code should be needed.  
 * **Differentiation_ZscoreData.csv Differentiation_ZscoreData_day1.csv, & Differentiation_ZscoreData_day0.csv**
+  * Open R IDE (e.g. RStudio, RGui etc)
+  * Update the path on line 2 to point to the extracted zip directory
+    * Note: If using Windows, make sure path uses forward slashes
   * Run all source code in “Differentiation Z score heatmaps.R” to perform all processing steps in sequence to generate heatmaps for Figures 2 & S4. No other adjustments to the code should be needed. 
 
 **All code run according to the instructions provided above should accurately reproduce the results reported in the accompanying study. Source code also includes detailed comments for functionality of individual lines/sections.**
