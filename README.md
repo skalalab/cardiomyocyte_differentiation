@@ -34,7 +34,7 @@ Differentiation_ZscoreData_day0.csv | Collected/compiled by T.Q. | Yes
 * scikit-learn (0.20.3)  
 * matplotlib (3.0.3)
 * pathlib (1.0.1)
-* progresssbar (2.5)
+* progressbar (2.5)
 
 #### R
 * R 3.6.2
