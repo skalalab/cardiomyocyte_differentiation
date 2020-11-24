@@ -27,14 +27,15 @@ Differentiation_ZscoreData_day0.csv | Collected/compiled by T.Q. | Yes
 ### Software 
 #### Python 
 * Python 3.7.3
+  * Anaconda distribution of Python recommended
 * Jupyter Notebook 5.7.8
-* numpy (1.16.2)
-* pandas (0.24.2)
-* umap-learn (0.3.10) 
-* scikit-learn (0.20.3)  
-* matplotlib (3.0.3)
+* numpy (1.19.2)
+* pandas (1.1.3)
+* umap-learn (0.4.6) 
+* scikit-learn (0.23.2)  
+* matplotlib (3.3.2)
 * pathlib (1.0.1)
-* progresssbar (2.5)
+* progressbar (2.5)
 
 #### R
 * R 3.6.2
@@ -45,7 +46,7 @@ Differentiation_ZscoreData_day0.csv | Collected/compiled by T.Q. | Yes
 * gplots (3.0.3)
 * RColorBrewer (1.1-2)
 * scales (1.1.0)
-* spatstat (1.63-3)library(ggplot2)
+* spatstat (1.63-3)
 * Hmisc (4.3.1)
 * psych (1.9.12.31)
 * dplyr (0.8.4)
@@ -67,7 +68,18 @@ No non-standard hardware required
 ## 2)  Installation Guide
 
 #### Python 
-The files _Differentiation Classification_Compiled_Clean.ipynb_ and _UMAP_Mapping_Compiled_Clean.ipynb_ will install the previously listed python dependencies on first run of the source code
+
+To create the necessary python environment we have enclosed a _environment.yml_ file that will install all of the dependencies and their respective versions. The python environment should be created prior to running source code. On a terminal with anaconda distribution of python installed, navigate to the directory of the extracted zip archive and execute the following command 
+
+`$ conda env create -f environment.yml`
+   
+This will create an environment called `cardio_diff` that you can then activate
+
+`$ conda activate cardio_diff`
+
+The files _Differentiation Classification_Compiled_Clean.ipynb_ and _UMAP_Mapping_Compiled_Clean.ipynb_ will import the previously listed python dependencies on first run of the source code.
+
+Alternatively, you could manually install the previously listed dependencies into your python environment of choice.
 
 #### R 
 
@@ -88,7 +100,7 @@ The files _Differentiation_UMAP_plotting.R_ and _Differentiation Z score heatmap
   * _Expected runtime:_
     * Cell 1 for model optimization took approximately 4 hours
     * Cell 2 for model training took approximately 4 hours
-    * Cells 3, & 4 approximately 10 min
+    * Cells 3 & 4 took approximately 10 minutes each
 
   &nbsp;
 
@@ -96,7 +108,7 @@ The files _Differentiation_UMAP_plotting.R_ and _Differentiation Z score heatmap
   * _Instructions:_ 
     * Run the code to initialize dependencies, read in required data files, and generate UMAP coordinates for all data according to projection mapped using listed parameters
   * _Expected outputs:_ 
-    * The code will generate the following files also included in the repository in the UMAP Data folder: _UMAPCoordinates_DifferentiationProject_Day1Efficiency.csv_ & _UMAPCoordinates_DifferentiationProject_Day1Efficiency_
+    * The code will generate the following files also included in the repository in the UMAP Data folder: _UMAPCoordinates_DifferentiationProject_Day1Efficiency.csv_ & _UMAPCoordinates_DifferentiationProject_AllDataMapping.csv_
   * _Expected runtime:_
     * Approximately 10 minutes
     
@@ -131,8 +143,8 @@ The files _Differentiation_UMAP_plotting.R_ and _Differentiation Z score heatmap
   1) Launch Jupyter Notebook and navigate to the root directory of the extracted zip file
   2) Open the notebook file you want to run
      * **UMAP_Mapping_Compiled_Clean.ipynb**
-       * Reads in _classification_results_umap_together_AllData.csv_ to produce Days 0-5 UMAPs (Figure 2).
-       * Reads in _classification_results_umap_together_Day1Efficiency.csv_ to produce Day 1 low vs high effiency UMAP (Figure 3).
+       * Reads in _classification_results_umap_together_AllData.csv_ to generate Days 0-5 UMAP coordinates (Figure 2).
+       * Reads in _classification_results_umap_together_Day1Efficiency.csv_ to generate Day 1 low vs high effiency UMAP coordinates(Figure 3).
      * **Differentiation Classification_Compiled_Clean.ipynb** 
        * Reads in _classification_results_umap_together_Day1Efficiency.csv_. Generates ROC curves and feature weight graphs for each model (formatted versions of expected outputs shown in Figures 3 & S5).
   3) Run source code/cells top to bottom to perform all processing steps in sequence. No other adjustments to the code needed.    
@@ -143,7 +155,7 @@ The files _Differentiation_UMAP_plotting.R_ and _Differentiation Z score heatmap
     1) Open your R integrated development environment (IDE) of choice (e.g. RStudio, RGui etc)
     2) Open the file you want to run
        * **Differentiation Z score heatmaps.R**
-         * Reads in _Differentiation_ZscoreData.csv_ _Differentiation_ZscoreData_day1.csv_, & _Differentiation_ZscoreData_day0.csv_. Generates heatmaps for Figures 2 & S4. 
+         * Reads in _Differentiation_ZscoreData.csv_, _Differentiation_ZscoreData_day1.csv_, & _Differentiation_ZscoreData_day0.csv_. Generates heatmaps for Figures 2 & S4. 
        * **Differentiation_UMAP_plotting.R**
          * Reads in _classification_results_umap_together_Day1Efficiency.csv_ and _classification_results_umap_AllData.csv_. Generates UMAP plots for Figures 2, 3, & S3 and saves .eps files for each UMAP plot. 
     3) Update the path on line 2 to point to the extracted zip directory
