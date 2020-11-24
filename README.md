@@ -29,11 +29,11 @@ Differentiation_ZscoreData_day0.csv | Collected/compiled by T.Q. | Yes
 * Python 3.7.3
   * Anaconda distribution of Python recommended
 * Jupyter Notebook 5.7.8
-* numpy (1.16.2)
-* pandas (0.24.2)
-* umap-learn (0.3.10) 
-* scikit-learn (0.20.3)  
-* matplotlib (3.0.3)
+* numpy (1.19.2)
+* pandas (1.1.3)
+* umap-learn (0.4.6) 
+* scikit-learn (0.23.2)  
+* matplotlib (3.3.2)
 * pathlib (1.0.1)
 * progressbar (2.5)
 
