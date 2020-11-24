@@ -68,7 +68,8 @@ No non-standard hardware required
 ## 2)  Installation Guide
 
 #### Python 
-The files _Differentiation Classification_Compiled_Clean.ipynb_ and _UMAP_Mapping_Compiled_Clean.ipynb_ will install the previously listed python dependencies on first run of the source code
+The file _environment.yml_ will install an environment including all dependencies and their respective versions. This should be installed to recreate the necessary python environment prior to running source code.   
+The files _Differentiation Classification_Compiled_Clean.ipynb_ and _UMAP_Mapping_Compiled_Clean.ipynb_ will import the previously listed python dependencies on first run of the source code
 
 #### R 
 
