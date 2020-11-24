@@ -68,8 +68,18 @@ No non-standard hardware required
 ## 2)  Installation Guide
 
 #### Python 
-The file _environment.yml_ will install an environment including all dependencies and their respective versions. This should be installed to recreate the necessary python environment prior to running source code.   
-The files _Differentiation Classification_Compiled_Clean.ipynb_ and _UMAP_Mapping_Compiled_Clean.ipynb_ will import the previously listed python dependencies on first run of the source code
+
+To create the necessary python environment we have enclosed a _environment.yml_ file that will install all of the dependencies and their respective versions. The python environment should be created prior to running source code. On a terminal with anaconda distribution of python installed, navigate to the directory of the extracted zip archive and execute the following command 
+
+`$ conda env create -f environment.yml`
+   
+This will create an environment called `cardio_diff` that you can then activate
+
+`$ conda activate cardio_diff`
+
+The files _Differentiation Classification_Compiled_Clean.ipynb_ and _UMAP_Mapping_Compiled_Clean.ipynb_ will import the previously listed python dependencies on first run of the source code.
+
+Alternatively, you could manually install the previously listed dependencies into your python environment of choice.
 
 #### R 
 
