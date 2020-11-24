@@ -27,6 +27,7 @@ Differentiation_ZscoreData_day0.csv | Collected/compiled by T.Q. | Yes
 ### Software 
 #### Python 
 * Python 3.7.3
+  * Anaconda distribution of Python recommended
 * Jupyter Notebook 5.7.8
 * numpy (1.16.2)
 * pandas (0.24.2)
