@@ -1,10 +1,11 @@
 # point working directory to extracted zip directory
 # NOTE: On Windows be sure to use forward slashes on the directory path (macOS and Linux already use forward slashes)
-PATH_TO_EXTRACTED_ZIP = "C:/Users/Nabiki/Desktop/development/cardiomyocyte_differentiation"
+PATH_TO_EXTRACTED_ZIP = "C:/Users/Tiffany/Documents/Github/cardiomyocyte_differentiation"
 setwd(PATH_TO_EXTRACTED_ZIP)
 
 # install dependencies
 install.packages("ggplot2")
+install.packages("rlang")
 install.packages("Hmisc")
 install.packages("psych")
 install.packages("reshape2")
@@ -22,6 +23,7 @@ install.packages("RColorBrewer")
 install.packages("inlmisc")
 
 ## Load in all required packages
+library("rlang")
 library("ggplot2")
 library("Hmisc")
 library("psych")
@@ -42,7 +44,7 @@ library("inlmisc")
 
 ## Read in data sets with UMAP coordinates
 DataUMAPS_alldata<-data.frame(read.csv("classification_results_umap_AllData.csv")) # All Day 0 - Day 5 data
-DataUMAPS_Day1Eff<-data.frame(read.csv("classification_results_umap_together_Day1Efficiency.csv"))
+DataUMAPS_Day1Eff<-data.frame(read.csv("classification_results_umap_together_Day1Efficiency 01192021.csv"))
 
 palette_Perc <- c('#e6194b','#4363d8', '#f58231', '#911eb4', '#46f0f0', '#f032e6', '#bcf60c', '#fabebe', '#008080', '#004530', '#3cb44b') #color palette for coding by differentiation percentage
 
@@ -97,8 +99,8 @@ for (i in 1:4)
     theme(axis.text.y=element_text(size=14, vjust=0.5))+
     theme(legend.title = element_text(size = 14, face = 'bold')) +
     theme(legend.text = element_text(size = 14)) +
-    scale_x_continuous(limits = c(-12, 12))+
-    scale_y_continuous(limits = c(-10, 10))
+    scale_x_continuous(limits = c(-5, 15))+
+    scale_y_continuous(limits = c(-5, 13))
 }
 
 
@@ -126,8 +128,8 @@ for (i in 1:11)
     theme(axis.text.y=element_text(size=14, vjust=0.5))+
     theme(legend.title = element_text(size = 14, face = 'bold')) +
     theme(legend.text = element_text(size = 14)) +
-    scale_x_continuous(limits = c(-12, 12))+
-    scale_y_continuous(limits = c(-10, 10))
+    scale_x_continuous(limits = c(-5, 15))+
+    scale_y_continuous(limits = c(-5, 13))
   
 }
 
@@ -158,7 +160,7 @@ DatabyEFF<- split(DataUMAPS_Day1Eff, f = as.factor(DataUMAPS_Day1Eff$EFFICIENCY)
 
 ##Only High efficiency plot
 dev.new()
-ggplot(DatabyEFF[[1]], aes(x = canberra1, y = canberra2, color = as.factor(EFFICIENCY))) + 
+ggplot(DatabyEFF[[1]], aes(x = euclidean1, y = euclidean2, color = as.factor(EFFICIENCY))) + 
   geom_point() +
   scale_color_manual(values=palette_Efficiency)+
   guides(color=guide_legend(title="EFFICIENCY"))+
@@ -169,14 +171,14 @@ ggplot(DatabyEFF[[1]], aes(x = canberra1, y = canberra2, color = as.factor(EFFIC
   theme(axis.text.y=element_text(size=14, vjust=0.5))+
   theme(legend.title = element_text(size = 14, face = 'bold')) +
   theme(legend.text = element_text(size = 14)) +
-  scale_x_continuous(limits = c(-12, 12))+
-  scale_y_continuous(limits = c(-10, 10))
+  scale_x_continuous(limits = c(-5, 15))+
+  scale_y_continuous(limits = c(-5, 15))
 ggsave("Day1_efficiency_UMAP_High.eps") # Save eps file
 
 
 ##Only Low efficiency plot
 dev.new()
-ggplot(DatabyEFF[[2]], aes(x = canberra1, y = canberra2, color = as.factor(EFFICIENCY))) + 
+ggplot(DatabyEFF[[2]], aes(x = euclidean1, y = euclidean2, color = as.factor(EFFICIENCY))) + 
   geom_point() +
   scale_color_manual(values=palette_Efficiency[2])+
   guides(color=guide_legend(title="EFFICIENCY"))+
@@ -187,14 +189,14 @@ ggplot(DatabyEFF[[2]], aes(x = canberra1, y = canberra2, color = as.factor(EFFIC
   theme(axis.text.y=element_text(size=14, vjust=0.5))+
   theme(legend.title = element_text(size = 14, face = 'bold')) +
   theme(legend.text = element_text(size = 14)) +
-  scale_x_continuous(limits = c(-12, 12))+
-  scale_y_continuous(limits = c(-10, 10))
+  scale_x_continuous(limits = c(-5, 15))+
+  scale_y_continuous(limits = c(-5, 15))
 ggsave("Day1_efficiency_UMAP_Low.eps") #save eps file
 
 
 ##Low and High efficiency graph
 dev.new()
-ggplot(DataUMAPS_Day1Eff, aes(x = canberra1, y = canberra2, color = as.factor(EFFICIENCY))) + 
+ggplot(DataUMAPS_Day1Eff, aes(x = euclidean1, y = euclidean2, color = as.factor(EFFICIENCY))) + 
   geom_point() +
   scale_color_manual(values=palette_Efficiency)+
   guides(color=guide_legend(title="EFFICIENCY"))+
@@ -207,8 +209,9 @@ ggplot(DataUMAPS_Day1Eff, aes(x = canberra1, y = canberra2, color = as.factor(EF
   #theme(legend.position = "none") 
   theme(legend.title = element_text(size = 14, face = 'bold')) +
   theme(legend.text = element_text(size = 14)) +
-  scale_x_continuous(limits = c(-12, 12))+
-  scale_y_continuous(limits = c(-10, 10))
-ggsave("Day1_efficiency_UMAP_LowHigh.eps") #save eps file
+  scale_x_continuous(limits = c(-5, 15))+
+  scale_y_continuous(limits = c(-5, 15))
+ggsave("Day1_efficiency_revised_UMAP_LowHigh.eps") #save eps file
+ggsave("Day1_efficiency_revised_UMAP_LowHigh.jpeg") 
 
 

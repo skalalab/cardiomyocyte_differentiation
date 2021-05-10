@@ -15,10 +15,12 @@ All Excel files used to generate and support the results from the associated cod
 Data file | Source | Provided
 ------- | ------- | -------
 classification_results_umap_AllData.csv | Collected/compiled by T.Q. | Yes
-classification_results_umap_together_Day1Efficiency.csv | Collected/compiled by T.Q. | Yes
-Differentiation_ZscoreData.csv | Collected/compiled by T.Q. | Yes
-Differentiation_ZscoreData_day1.csv | Collected/compiled by T.Q. | Yes
-Differentiation_ZscoreData_day0.csv | Collected/compiled by T.Q. | Yes
+classification_results_umap_together_Day1Efficiency 01192021.csv | Collected/compiled by T.Q. | Yes
+classification_results_umap_together_Day1Efficiency 01192021_Dish1.csv | Collected/compiled by T.Q. | Yes
+classification_results_umap_together_Day1Efficiency 01192021_Dish2.csv | Collected/compiled by T.Q. | Yes
+Differentiation_ZscoreData 02082021.csv | Collected/compiled by T.Q. | Yes
+Differentiation_ZscoreData_day1 02082021.csv | Collected/compiled by T.Q. | Yes
+Differentiation_ZscoreData_day0 02082021.csv | Collected/compiled by T.Q. | Yes
 
 ---
 
@@ -96,7 +98,7 @@ The files _Differentiation_UMAP_plotting.R_ and _Differentiation Z score heatmap
   * _Instructions:_ 
     * Run the code to initialize dependencies, read in required data files, and generate UMAP coordinates for all data according to projection mapped using listed parameters
   * _Expected outputs:_ 
-    * The code will generate the following files also included in the repository in the UMAP Data folder: _UMAPCoordinates_DifferentiationProject_Day1Efficiency.csv_ & _UMAPCoordinates_DifferentiationProject_Day1Efficiency_
+    * The code will generate the following files also included in the repository in the UMAP Data folder: _UMAPCoordinates_DifferentiationProject_AllDataMapping.csv_ & _UMAPCoordinates_DifferentiationProject_Day1EfficiencyNonnormalized revised.csv_
   * _Expected runtime:_
     * Approximately 10 minutes
     
@@ -132,9 +134,9 @@ The files _Differentiation_UMAP_plotting.R_ and _Differentiation Z score heatmap
   2) Open the notebook file you want to run
      * **UMAP_Mapping_Compiled_Clean.ipynb**
        * Reads in _classification_results_umap_together_AllData.csv_ to produce Days 0-5 UMAPs (Figure 2).
-       * Reads in _classification_results_umap_together_Day1Efficiency.csv_ to produce Day 1 low vs high effiency UMAP (Figure 3).
+       * Reads in _classification_results_umap_together_Day1Efficiency 01192021.csv_ to produce Day 1 low vs high effiency UMAP (Figure 3).
      * **Differentiation Classification_Compiled_Clean.ipynb** 
-       * Reads in _classification_results_umap_together_Day1Efficiency.csv_. Generates ROC curves and feature weight graphs for each model (formatted versions of expected outputs shown in Figures 3 & S5).
+       * Reads in _classification_results_umap_together_Day1Efficiency 01192021_Dish1.csv_ and _classification_results_umap_together_Day1Efficiency 01192021_Dish2.csv_ for respective training and test sets for classifer training and evaluation. Generates ROC curves and feature weight graphs for each model (formatted versions of expected outputs shown in Figures 3 & S5).
   3) Run source code/cells top to bottom to perform all processing steps in sequence. No other adjustments to the code needed.    
   
   &nbsp;
@@ -143,9 +145,9 @@ The files _Differentiation_UMAP_plotting.R_ and _Differentiation Z score heatmap
     1) Open your R integrated development environment (IDE) of choice (e.g. RStudio, RGui etc)
     2) Open the file you want to run
        * **Differentiation Z score heatmaps.R**
-         * Reads in _Differentiation_ZscoreData.csv_ _Differentiation_ZscoreData_day1.csv_, & _Differentiation_ZscoreData_day0.csv_. Generates heatmaps for Figures 2 & S4. 
+         * Reads in _Differentiation_ZscoreData 02082021.csv_ _Differentiation_ZscoreData_day1 02082021.csv_, & _Differentiation_ZscoreData_day0 02082021.csv_. Generates heatmaps for Figures 2 & S4. 
        * **Differentiation_UMAP_plotting.R**
-         * Reads in _classification_results_umap_together_Day1Efficiency.csv_ and _classification_results_umap_AllData.csv_. Generates UMAP plots for Figures 2, 3, & S3 and saves .eps files for each UMAP plot. 
+         * Reads in _classification_results_umap_together_Day1Efficiency 01192021.csv_ and _classification_results_umap_AllData.csv_. Generates UMAP plots for Figures 2, 3, & S3 and saves .eps files for each UMAP plot. 
     3) Update the path on line 2 to point to the extracted zip directory
         * Note: If using Windows, make sure the path variable uses forward slashes. (macOS and Linux already use them)
     4) Run all source code. No other adjustments to the code needed.

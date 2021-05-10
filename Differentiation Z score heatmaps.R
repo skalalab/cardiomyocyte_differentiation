@@ -24,19 +24,18 @@ library("scales")
 library("spatstat")
 
 # Read in data
-alldata_day0 <- read.csv(file = "Differentiation_ZscoreData_day0.csv", header = TRUE)
-Zcols_day0<-c("CONDITION", "FAD.Intensity","FAD.a1","FAD.a2","FAD.t1","FAD.t2","FAD.tm", "NADPH.Intensity", "NADPH.a1","NADPH.a2","NADPH.t1","NADPH.t2","NADPH.tm","Redox.Ratio")
+alldata_day0 <- read.csv(file = "Differentiation_ZscoreData_day0 02082021.csv", header = TRUE)
+Zcols_day0<-c("CONDITION","FAD.Intensity","FAD.a1","FAD.a2","FAD.t1","FAD.t2","FAD.tm", "NADPH.Intensity","NADPH.a1","NADPH.a2","NADPH.t1","NADPH.t2","NADPH.tm","Redox.Ratio")
 Zscores_day0<-alldata_day0[Zcols_day0]
 
-alldata_day1 <- read.csv(file = "Differentiation_ZscoreData_day1.csv", header = TRUE)
-Zcols_day1<-c("CONDITION", "FAD.Intensity","FAD.a1","FAD.a2","FAD.t1","FAD.t2","FAD.tm", "NADPH.Intensity", "NADPH.a1","NADPH.a2","NADPH.t1","NADPH.t2","NADPH.tm","Redox.Ratio")
+alldata_day1 <- read.csv(file = "Differentiation_ZscoreData_day1 02082021.csv", header = TRUE)
+Zcols_day1<-c("CONDITION","FAD.Intensity","FAD.a1","FAD.a2","FAD.t1","FAD.t2","FAD.tm", "NADPH.Intensity","NADPH.a1","NADPH.a2","NADPH.t1","NADPH.t2","NADPH.tm","Redox.Ratio")
 Zscores_day1<-alldata_day1[Zcols_day1]
 
 
-alldata <- read.csv(file = "Differentiation_ZscoreData.csv", header = TRUE)
-Zcols<-c("CONDITION", "FAD.Intensity","FAD.a1","FAD.a2","FAD.t1","FAD.t2","FAD.tm", "NADPH.Intensity", "NADPH.a1","NADPH.a2","NADPH.t1","NADPH.t2","NADPH.tm","Redox.Ratio")
+alldata <- read.csv(file = "Differentiation_ZscoreData 02082021.csv", header = TRUE)
+Zcols<-c("CONDITION","FAD.Intensity","FAD.a1","FAD.a2","FAD.t1","FAD.t2","FAD.tm", "NADPH.Intensity","NADPH.a1","NADPH.a2","NADPH.t1","NADPH.t2","NADPH.tm","Redox.Ratio")
 Zscores<-alldata[Zcols]
-
 
 
 # Run clustering
@@ -103,12 +102,16 @@ png("../images/Zscore_heatmap.png",    # create PNG for the heat map
 
 
 
+
+
 ##Plot Z-score heatmap with all data
 dev.new()
 heatmap.2(Zscores.matrix,
           notecol="black",      # change font color of cell labels to black
+          hclustfun=function(x) hclust(x,method = 'average'),
           density.info="none",  # turns off density plot inside color legend
           trace="none",         # turns off trace lines inside the heat map
+          cexRow =0.6,
           margins =c(9,9),     # widens margins around plot
           col=my_palette,       # use on color palette defined earlier
           #breaks=col_breaks,    # enable color transition at specified limits
@@ -121,8 +124,9 @@ dev.new()
 heatmap.2(Zscores_day0.matrix,
           notecol="black",      # change font color of cell labels to black
           density.info="none",  # turns off density plot inside color legend
+          hclustfun=function(x) hclust(x,method = 'average'),
           trace="none",         # turns off trace lines inside the heat map
-          margins =c(9,9),     # widens margins around plot
+          margins =c(9,12),     # widens margins around plot
           col=my_palette,       # use on color palette defined earlier
           #breaks=col_breaks,    # enable color transition at specified limits
           dendrogram="row",     # only draw a row dendrogram
@@ -134,9 +138,10 @@ heatmap.2(Zscores_day0.matrix,
 dev.new()
 heatmap.2(Zscores_day1.matrix,
           notecol="black",      # change font color of cell labels to black
+          hclustfun=function(x) hclust(x,method = 'average'),
           density.info="none",  # turns off density plot inside color legend
           trace="none",         # turns off trace lines inside the heat map
-          margins =c(9,9),     # widens margins around plot
+          margins =c(9,12),     # widens margins around plot
           col=my_palette,       # use on color palette defined earlier
           #breaks=col_breaks,    # enable color transition at specified limits
           dendrogram="row",     # only draw a row dendrogram
