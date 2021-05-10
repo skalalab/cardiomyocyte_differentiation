@@ -27,12 +27,13 @@ Differentiation_ZscoreData_day0.csv | Collected/compiled by T.Q. | Yes
 ### Software 
 #### Python 
 * Python 3.7.3
+  * Anaconda distribution of Python recommended
 * Jupyter Notebook 5.7.8
-* numpy (1.16.2)
-* pandas (0.24.2)
-* umap-learn (0.3.10) 
-* scikit-learn (0.20.3)  
-* matplotlib (3.0.3)
+* numpy (1.19.2)
+* pandas (1.1.3)
+* umap-learn (0.4.6) 
+* scikit-learn (0.23.2)  
+* matplotlib (3.3.2)
 * pathlib (1.0.1)
 * progressbar (2.5)
 
@@ -67,8 +68,18 @@ No non-standard hardware required
 ## 2)  Installation Guide
 
 #### Python 
-The file _environment.yml_ will install an environment including all dependencies and their respective versions. This should be installed to recreate the necessary python environment prior to running source code.   
-The files _Differentiation Classification_Compiled_Clean.ipynb_ and _UMAP_Mapping_Compiled_Clean.ipynb_ will import the previously listed python dependencies on first run of the source code
+
+To create the necessary python environment we have enclosed a _environment.yml_ file that will install all of the dependencies and their respective versions. The python environment should be created prior to running source code. On a terminal with anaconda distribution of python installed, navigate to the directory of the extracted zip archive and execute the following command 
+
+`$ conda env create -f environment.yml`
+   
+This will create an environment called `cardio_diff` that you can then activate
+
+`$ conda activate cardio_diff`
+
+The files _Differentiation Classification_Compiled_Clean.ipynb_ and _UMAP_Mapping_Compiled_Clean.ipynb_ will import the previously listed python dependencies on first run of the source code.
+
+Alternatively, you could manually install the previously listed dependencies into your python environment of choice.
 
 #### R 
 
