@@ -1,6 +1,9 @@
 <!-- # cardiomyocyte_differentiation
 Label-free imaging for quality control of cardiomyocyte differentiation
  -->
+ 
+ [![DOI](https://zenodo.org/badge/314347546.svg)](https://zenodo.org/badge/latestdoi/314347546)
+
 
 # README file
 # Label-free imaging for quality control of cardiomyocyte differentiation
